@@ -8,7 +8,7 @@ package rules;
  * general information on Stellar.
  */
 public class RulesOf6005 {
-     
+
     /**
      * Judge whether a given piece of code may be used in an assignment (problem
      * set or team project) or not, according to the 6.005 collaboration policy.
@@ -35,12 +35,16 @@ public class RulesOf6005 {
     public static boolean mayUseCodeInAssignment(boolean writtenByYourself,
             boolean availableToOthers, boolean writtenAsCourseWork,
             boolean citingYourSource, boolean implementationRequired) {
-        
-        // TODO: Fill in this method, then remove the exception
-        
-        throw new RuntimeException("implement me!");
+
+        if (writtenByYourself) {
+            return true;
+        }
+        return availableToOthers
+                && !writtenAsCourseWork
+                && citingYourSource
+                && !implementationRequired;
     }
-    
+
     /**
      * Main method of the class.
      * 
